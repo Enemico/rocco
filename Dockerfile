@@ -8,7 +8,7 @@ RUN ln -s /usr/share/zoneinfo/Europe/Oslo /etc/localtime
 
 RUN yum -y install epel-release
 RUN yum -y update
-RUN yum -y install git cmake gcc gcc-c++ libuv-static libstdc++-static libmicrohttpd-devel
+RUN yum -y install git cmake gcc gcc-c++ libuv-static libstdc++-static libmicrohttpd-devel zsh
 RUN git clone https://github.com/xmrig/xmrig.git
 RUN mkdir xmrig/build
 RUN yum -y install cmake3 make
