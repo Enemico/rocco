@@ -1,18 +1,19 @@
 FROM centos:latest
 
-RUN yum update
+RUN yum -y update
 
 
 RUN rm -f /etc/localtime
 RUN ln -s /usr/share/zoneinfo/Europe/Oslo /etc/localtime
 
-RUN yum -y install centos-release-scl epel-release
-RUN yum update
-RUN yum -y install cmake3 devtoolset-4-gcc* hwloc-devel git libmicrohttpd-devel openssl-devel make
-RUN scl enable devtoolset-4 bash
-RUN git clone https://github.com/fireice-uk/xmr-stak.git
-RUN mkdir xmr-stak/build
-RUN cd xmr-stak/build && cmake3 .. && make install
+RUN yum -y install epel-release
+RUN yum -y update
+RUN yum -y install git cmake gcc gcc-c++ libuv-static libstdc++-static libmicrohttpd-devel
+RUN git clone https://github.com/xmrig/xmrig.git
+RUN mkdir xmrig/build
+RUN yum -y install cmake3 make
+RUN cd xmrig/build && cmake3 .. -DCMAKE_BUILD_TYPE=Release -DUV_LIBRARY=/usr/lib64/libuv.a
+RUN cd xmrig/build && make
 
 
 COPY ./service service
