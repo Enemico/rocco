@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 import subprocess
+import os
+
 
 pool = os.environ.get('POOL')
 wallet = os.environ.get('WALLET')
