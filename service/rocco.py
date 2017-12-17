@@ -2,7 +2,7 @@
 
 import subprocess
 import os
-
+import os.path
 
 pool = os.environ.get('POOL', 'pool.minexmr.com:4444')
 wallet = os.environ.get('WALLET', '4Ay38XNxyezaKYp9jfd2ADcyFQGKTatasjZQzkKw47s9Pfw7m4mcE4ySaFd2o8KCtcVrL9eHBNNiE2wGMC8fU5QHUf3rBkU')
