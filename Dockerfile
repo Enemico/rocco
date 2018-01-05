@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM centos/python-35-centos7
 
 RUN yum -y update
 
