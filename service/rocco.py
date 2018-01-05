@@ -10,7 +10,7 @@ password = os.environ.get('PASS', 'x')
 
 
 def rocco():
-    subprocess.run(["/root/xmrig/build/xmrig", "-o", pool, "-u", wallet, "-p", password, "-t", threads, "-k"])
+    subprocess.run(["/root/xmrig/build/xmrig", "-o", pool, "-u", wallet, "-p", password, "-t", threads, "-k"], stdout=subprocess.PIPE)
 
 
 if __name__ == '__main__':
