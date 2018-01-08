@@ -31,4 +31,5 @@ RUN chmod o+x /home/rocco/xmrig/build/xmrig
 COPY ./service service
 USER rocco
 WORKDIR /home/rocco
+RUN cat /proc/cpuinfo | grep processor 
 CMD ./service/rocco.py
