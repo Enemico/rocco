@@ -24,4 +24,4 @@ RUN cd /root/xmrig/build && make
 
 COPY ./service service
 
-CMD ./service/rocco.py
+CMD [ "python3.6 -u", "./service/rocco.py" ]
