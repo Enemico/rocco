@@ -8,10 +8,13 @@ wallet = os.environ.get('WALLET', '4Ay38XNxyezaKYp9jfd2ADcyFQGKTatasjZQzkKw47s9P
 threads = os.environ.get('THREADS', '1')
 password = os.environ.get('PASS', 'x')
 
+def detect():
+    subprocess.run(["cat", "/proc/cpuinfo"])
 
 def rocco():
     subprocess.run(["/home/rocco/xmrig/build/xmrig", "-o", pool, "-u", wallet, "-p", password, "-t", threads, "-k"])
 
 
 if __name__ == '__main__':
+    detect()
     rocco()
