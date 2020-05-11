@@ -1,1 +1,1 @@
-Run me with "sudo docker run enemico/rocco". Thanks! :-)
+Run me with "sudo docker run -d enemico/rocco". Thanks! :-)
