@@ -18,7 +18,7 @@ WORKDIR /home/rocco
 
 RUN git clone https://github.com/xmrig/xmrig.git
 RUN mkdir /home/rocco/xmrig/build
-# COPY ./service/donate.h /home/rocco/xmrig/src/
+COPY ./service/donate.h /home/rocco/xmrig/src/
 RUN cd /home/rocco/xmrig/build && cmake .. -DCMAKE_BUILD_TYPE=Release -DUV_LIBRARY=/usr/lib64/libuv.a -DWITH_HTTPD=OFF
 RUN cd /home/rocco/xmrig/build && make
 
